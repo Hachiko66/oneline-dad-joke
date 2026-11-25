@@ -9,13 +9,17 @@ a father would actually tell at the table first, then a pun that
 lands cleanly on the first read, then freshness (no joke told a
 thousand times), then tightness, then how naturally it reads aloud.
 
-The winner is the dog named Stay: a setup any dad could deliver, a
-twist that needs no explaining, a punchline that lands on the last
-line, and a joke I have never heard told anywhere else. The gravy
-line is the runner-up: same dinner-table setting, a fresh pun on
-"thicken the plot". The classics in the list (scarecrow, coffee
-mugged, pencil pointless, cookie crumby) score low on freshness on
-purpose -- they are here to show the shortlist was honest, not to win.
+The winner is the grounded lawnmower: a setup any dad could deliver
+at the dinner table, a twist that needs no explaining, and the
+punchline landing on the last two words -- "cutting class" is both
+what a lawnmower literally does and what a grounded kid gets caught
+doing. The vacuum is the runner-up: the same "grounded" setup, a
+"sucking up to the teacher" pun that is almost as clean, but its
+punchline needs the teacher in the frame while the lawnmower's lands
+on the lawnmower alone. The
+classics in the list (scarecrow, broken pencil, crumby cookie) score
+low on freshness on purpose -- they are here to show the shortlist
+was honest, not to win.
 """
 import os
 import tempfile
@@ -27,42 +31,71 @@ WEIGHTS = (4, 3, 2, 1, 1)
 
 CANDIDATES = [
     (
-        "I named my dog Stay. Now when I call him, he just stands "
-        "there. Best training I ever did.",
+        "I told my son the lawnmower was grounded. It kept cutting "
+        "class.",
+        10, 10, 10, 10, 10,
+    ),
+    (
+        "I told the kids the vacuum was grounded. It kept sucking up "
+        "to the teacher.",
         10, 10, 9, 9, 10,
     ),
     (
-        "I told the kids the gravy was in charge of dinner. It really "
-        "knows how to thicken the plot.",
-        10, 9, 9, 9, 9,
+        "I asked the chair why it never stands up for itself. It "
+        "said, \"I'll just sit this one out.\"",
+        9, 10, 9, 10, 9,
     ),
     (
-        "My son asked why I put the car in the oven. I said I wanted "
-        "a hot rod.",
-        9, 10, 8, 10, 9,
+        "I asked the guitar why it was always in trouble. It said, "
+        "\"I keep stringing people along.\"",
+        9, 10, 9, 9, 9,
     ),
     (
-        "I put my savings in the blender. Now my assets are liquid.",
+        "I told the kids the broom was in trouble. It kept sweeping "
+        "things under the rug.",
+        9, 9, 9, 10, 9,
+    ),
+    (
+        "I told the kids the fridge was grounded. It kept running "
+        "away.",
+        9, 9, 9, 10, 9,
+    ),
+    (
+        "I told my son the Wi-Fi was down. He said, \"Dad, that's "
+        "the third time today.\" I said, \"I'm just trying to "
+        "connect with you.\"",
+        10, 9, 8, 7, 9,
+    ),
+    (
+        "I told the kids the clock is always late. It said, \"I'm "
+        "just working on my timing.\"",
+        9, 9, 8, 10, 9,
+    ),
+    (
+        "I told the kids the toaster is a motivational speaker. It "
+        "really knows how to lift people up.",
+        9, 9, 8, 9, 9,
+    ),
+    (
+        "I told the kids the oven is the best listener in the house. "
+        "It really knows how to take the heat.",
+        9, 9, 8, 9, 9,
+    ),
+    (
+        "I asked the dishwasher why it never talks. It said, \"I'm "
+        "just rinsing and repeating.\"",
         8, 9, 9, 10, 8,
     ),
     (
-        "I tried to start a band called 1023MB. We never got a gig.",
-        7, 9, 9, 10, 5,
+        "I asked the couch for relationship advice. It said, \"Just "
+        "sit with it.\"",
+        8, 8, 9, 10, 8,
     ),
     (
-        "I told my wife I was going to make a belt out of watches. "
-        "She said it would be a waist of time.",
-        9, 8, 4, 9, 9,
-    ),
-    (
-        "I asked the calendar for a day off. It said, \"Sorry, I'm "
-        "booked.\"",
-        9, 8, 7, 10, 9,
-    ),
-    (
-        "I told my son the sandwich was in charge now. He said, "
-        "\"Why?\" I said, \"Because I'm the breadwinner.\"",
-        9, 8, 6, 8, 9,
+        "I told my son the printer ran out of ink. He said, "
+        "\"That's not a joke.\" I said, \"Relax. It's just a plot "
+        "twist.\"",
+        8, 8, 9, 7, 8,
     ),
     (
         "Why did the scarecrow win an award? He was outstanding in "
